@@ -67,7 +67,29 @@ app.post('/api/login', (req, res) => {
 });
 
 app.get('/api/rooms', (req, res) => {
-  res.json(readData(roomsFile));
+  const guests = parseInt(req.query.guests, 10);
+  const checkInDate = req.query.checkInDate; // format: YYYY-MM-DD
+  const sort = req.query.sort
+  const rooms = readData(roomsFile);
+
+  // Filter based on guests and date
+  const filteredRooms = rooms.filter((room) => {
+    const fitsGuests = guests ? room.maxGuests >= guests : true;
+    const available = checkInDate
+      ? room.availableDates.includes(checkInDate)
+      : true;
+    return fitsGuests && available;
+  });
+
+  let sortedRooms = [...filteredRooms];
+
+  if (sort === "asc") {
+    sortedRooms.sort((a, b) => a.pricePerNight - b.pricePerNight);
+  } else if (sort === "desc") {
+    sortedRooms.sort((a, b) => b.pricePerNight - a.pricePerNight);
+  }
+
+  res.json(sortedRooms);
 });
 
 app.get('/api/bookings', auth, (req, res) => {

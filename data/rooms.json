@@ -1,14 +1,50 @@
 [
   {
     "id": 1,
-    "name": "Deluxe Room",
-    "price": 120,
-    "image": "https://via.placeholder.com/300"
+    "name": "Deluxe King Room",
+    "maxGuests": 2,
+    "pricePerNight": 120,
+    "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-05"],
+    "image": "https://via.placeholder.com/400x250"
   },
   {
     "id": 2,
-    "name": "Standard Room",
-    "price": 80,
-    "image": "https://via.placeholder.com/300"
+    "name": "Family Suite",
+    "maxGuests": 4,
+    "pricePerNight": 200,
+    "availableDates": ["2025-06-03", "2025-06-04", "2025-06-07", "2025-06-10"],
+    "image": "https://via.placeholder.com/400x250"
+  },
+  {
+    "id": 3,
+    "name": "Single Economy Room",
+    "maxGuests": 1,
+    "pricePerNight": 60,
+    "availableDates": ["2025-06-01", "2025-06-03", "2025-06-05", "2025-06-06"],
+    "image": "https://via.placeholder.com/400x250"
+  },
+  {
+    "id": 4,
+    "name": "Ocean View Suite",
+    "maxGuests": 3,
+    "pricePerNight": 250,
+    "availableDates": ["2025-06-02", "2025-06-03", "2025-06-05", "2025-06-08"],
+    "image": "https://via.placeholder.com/400x250"
+  },
+  {
+    "id": 5,
+    "name": "Presidential Suite",
+    "maxGuests": 6,
+    "pricePerNight": 500,
+    "availableDates": ["2025-06-03", "2025-06-04", "2025-06-07", "2025-06-09"],
+    "image": "https://via.placeholder.com/400x250"
+  },
+  {
+    "id": 6,
+    "name": "Garden Villa",
+    "maxGuests": 5,
+    "pricePerNight": 300,
+    "availableDates": ["2025-06-01", "2025-06-03", "2025-06-06", "2025-06-08"],
+    "image": "https://via.placeholder.com/400x250"
   }
 ]
