@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(cors());
@@ -90,4 +91,4 @@ app.delete('/api/bookings/:id', auth, (req, res) => {
   res.json({ message: 'Booking cancelled' });
 });
 
-app.listen(3001, () => console.log('Backend running on port 3001'));
+app.listen(PORT, '0.0.0.0', () => console.log(`Backend running on port ${PORT}`));
