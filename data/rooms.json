@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Deluxe Room",
+    "price": 120,
+    "image": "https://via.placeholder.com/300"
+  },
+  {
+    "id": 2,
+    "name": "Standard Room",
+    "price": 80,
+    "image": "https://via.placeholder.com/300"
+  }
+]
