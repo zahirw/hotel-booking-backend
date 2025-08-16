@@ -102,17 +102,45 @@ app.get('/api/rooms/:id', (req, res) => {
 });
 
 app.get('/api/bookings', auth, (req, res) => {
-  const bookings = readData(bookingsFile).filter(b => b.userId === req.user.id);
+  const bookings = readData(bookingsFile).filter(b => b.userId === req.query.userId);
   res.json(bookings);
 });
 
 app.post('/api/bookings', auth, (req, res) => {
-  const { roomId, checkin, checkout } = req.body;
+  const { roomId, checkin, checkout, userId, } = req.body;
   const bookings = readData(bookingsFile);
-  const newBooking = { id: Date.now(), userId: req.user.id, roomId, checkin, checkout };
+  const newBooking = { id: Date.now(), userId, roomId, checkin, checkout, contactId: '' };
   bookings.push(newBooking);
   writeData(bookingsFile, bookings);
   res.json({ message: 'Booking created', booking: newBooking });
+});
+
+// Update booking contactId
+app.patch('/api/bookings/:id', auth, (req, res) => {
+  const { id } = req.params;
+  const { contactId } = req.body;
+
+  if (!contactId) {
+    return res.status(400).json({ message: 'contactId is required' });
+  }
+
+  const bookings = readData(bookingsFile);
+  const bookingIndex = bookings.findIndex(
+    (b) => b.id === parseInt(id)
+  );
+
+  if (bookingIndex === -1) {
+    return res.status(404).json({ message: 'Booking not found' });
+  }
+
+  bookings[bookingIndex].contactId = contactId;
+
+  writeData(bookingsFile, bookings);
+
+  res.json({
+    message: 'Booking updated',
+    booking: bookings[bookingIndex],
+  });
 });
 
 app.delete('/api/bookings/:id', auth, (req, res) => {
@@ -138,9 +166,9 @@ app.get('/api/contacts/:id', (req, res) => {
 
 // Add new contact
 app.post('/api/contacts', (req, res) => {
-  const { title, name, email, address } = req.body;
+  const { title, name, email, userId } = req.body;
   const contacts = readData(contactsFile);
-  const newContact = { id: Date.now(), title, name, email, address };
+  const newContact = { id: Date.now(), title, name, email, userId };
   contacts.push(newContact);
   writeData(contactsFile, contacts);
   res.json({ message: 'Contact added', contact: newContact });
