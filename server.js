@@ -21,6 +21,7 @@ const SECRET = 'supersecret';
 const usersFile = path.join(__dirname, 'data/users.json');
 const roomsFile = path.join(__dirname, 'data/rooms.json');
 const bookingsFile = path.join(__dirname, 'data/bookings.json');
+const contactsFile = path.join(__dirname, 'data/contacts.json');
 
 // Helper
 function readData(file) {
@@ -92,6 +93,14 @@ app.get('/api/rooms', (req, res) => {
   res.json(sortedRooms);
 });
 
+// Get room by id
+app.get('/api/rooms/:id', (req, res) => {
+  const rooms = readData(roomsFile);
+  const room = rooms.find(r => r.id === parseInt(req.params.id));
+  if (!room) return res.status(404).json({ message: 'Room not found' });
+  res.json(room);
+});
+
 app.get('/api/bookings', auth, (req, res) => {
   const bookings = readData(bookingsFile).filter(b => b.userId === req.user.id);
   res.json(bookings);
@@ -111,6 +120,30 @@ app.delete('/api/bookings/:id', auth, (req, res) => {
   const updated = bookings.filter(b => b.id !== parseInt(req.params.id) || b.userId !== req.user.id);
   writeData(bookingsFile, updated);
   res.json({ message: 'Booking cancelled' });
+});
+
+// Get all contacts
+app.get('/api/contacts', (req, res) => {
+  const contacts = readData(contactsFile);
+  res.json(contacts);
+});
+
+// Get contact by id
+app.get('/api/contacts/:id', (req, res) => {
+  const contacts = readData(contactsFile);
+  const contact = contacts.find(c => c.id === parseInt(req.params.id));
+  if (!contact) return res.status(404).json({ message: 'Contact not found' });
+  res.json(contact);
+});
+
+// Add new contact
+app.post('/api/contacts', (req, res) => {
+  const { title, name, email, address } = req.body;
+  const contacts = readData(contactsFile);
+  const newContact = { id: Date.now(), title, name, email, address };
+  contacts.push(newContact);
+  writeData(contactsFile, contacts);
+  res.json({ message: 'Contact added', contact: newContact });
 });
 
 app.listen(PORT, '0.0.0.0', () => console.log(`Backend running on port ${PORT}`));
