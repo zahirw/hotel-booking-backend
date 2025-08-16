@@ -121,6 +121,13 @@ app.get('/api/bookings', auth, (req, res) => {
   res.json(bookings);
 });
 
+app.get('/api/bookings/:id', (req, res) => {
+  const bookings = readData(bookingsFile);
+  const booking = bookings.find(r => r.id === parseInt(req.params.id));
+  if (!booking) return res.status(404).json({ message: 'Booking not found' });
+  res.json(booking);
+});
+
 app.post('/api/bookings', auth, (req, res) => {
   const { roomId, checkin, checkout, userId, } = req.body;
   const bookings = readData(bookingsFile);
@@ -129,6 +136,7 @@ app.post('/api/bookings', auth, (req, res) => {
   writeData(bookingsFile, bookings);
   res.json({ message: 'Booking created', booking: newBooking });
 });
+
 
 // Update booking contactId
 app.patch('/api/bookings/:id', auth, (req, res) => {
