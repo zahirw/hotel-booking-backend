@@ -42,6 +42,21 @@ function auth(req, res, next) {
   });
 }
 
+app.get('/api/me', auth, (req, res) => {
+  const users = readData(usersFile);
+  const user = users.find(u => u.id === req.user.id);
+
+  if (!user) {
+    return res.status(404).json({ message: 'User not found' });
+  }
+
+  res.json({
+    id: user.id,
+    name: user.name,
+    email: user.email,
+  });
+});
+
 // Routes
 app.post('/api/register', (req, res) => {
   const { name, email, password } = req.body;
