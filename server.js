@@ -129,9 +129,9 @@ app.get('/api/bookings/:id', (req, res) => {
 });
 
 app.post('/api/bookings', auth, (req, res) => {
-  const { roomId, checkin, checkout, userId, } = req.body;
+  const { roomId, checkin, checkout, userId, totalGuest } = req.body;
   const bookings = readData(bookingsFile);
-  const newBooking = { id: Date.now(), userId, roomId, checkin, checkout, contactId: '' };
+  const newBooking = { id: Date.now(), userId, roomId, checkin, checkout, totalGuest, contactId: '' };
   bookings.push(newBooking);
   writeData(bookingsFile, bookings);
   res.json({ message: 'Booking created', booking: newBooking });
