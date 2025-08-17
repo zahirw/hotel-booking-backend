@@ -5,7 +5,7 @@
     "maxGuests": 2,
     "pricePerNight": 120,
     "availableDates": ["2025-06-01", "2025-06-02", "2025-06-03", "2025-06-05"],
-    "image": "https://images.openai.com/thumbnails/url/MslKeXicu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw40cPZPc60st_DJNU4PCzc0Nzcq8fVzDzEPS_RxNc2Kjwhw9iozDkvRLXXR9UqtKHMJMyoOdCzNsCxSKwYAlxQoDg"
+    "image": "https://imageio.forbes.com/specials-images/imageserve/652f603a91415a3d647fc207/0x0.jpg?fit=bounds&format=jpg&height=900&width=1600"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "maxGuests": 4,
     "pricePerNight": 200,
     "availableDates": ["2025-06-03", "2025-06-04", "2025-06-07", "2025-06-10"],
-    "image": "https://images.openai.com/thumbnails/url/RsfE13icu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw6OMs1PiUwNdnc2icrMT09Jj_TLzbLIzXN2ztM1KvVMKq-MTC0J8ssOj0rL8DL0D8p2NApIzDMIMQtRKwYA1P8pTg"
+    "image": "https://www.decorilla.com/online-decorating/wp-content/uploads/2021/05/Luxury-hotel-interior-design-on-the-water-1.jpeg"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "maxGuests": 1,
     "pricePerNight": 60,
     "availableDates": ["2025-06-01", "2025-06-03", "2025-06-05", "2025-06-06"],
-    "image": "https://images.openai.com/thumbnails/url/7Fh5BHicu1mSUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw7Js7BMzwrMNiuqCi0pDQlID0i2DCmpSkrN9wnzSCv1yknMKnD3MXUsMItILtAtNE5xNwopCg0NyXUNLFcrBgA9giqc"
+    "image": "https://carrolldesign.co.uk/wp-content/uploads/2023/01/luxury-hotel-bedroom-design.jpg"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "maxGuests": 3,
     "pricePerNight": 250,
     "availableDates": ["2025-06-02", "2025-06-03", "2025-06-05", "2025-06-08"],
-    "image": "https://images.openai.com/thumbnails/url/TL8tnXicu1mSUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw4yzDIM9M7xtLTIdPQzKSwIKY70CQzzKzB1jzJ1jEo08yhwSwr1zXUqTivKNCkx8bHMDAyJCixLNvE2cVQrBgD1nSjY"
+    "image": "https://hips.hearstapps.com/toc.h-cdn.co/assets/16/48/1480373892-screen-shot-2016-11-28-at-55748-pm.png?crop=0.8875809299587993xw%3A1xh%3Bcenter%2Ctop&resize=1200%3A%2A"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "maxGuests": 6,
     "pricePerNight": 500,
     "availableDates": ["2025-06-03", "2025-06-04", "2025-06-07", "2025-06-09"],
-    "image": "https://images.openai.com/thumbnails/url/MslKeXicu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw40cPZPc60st_DJNU4PCzc0Nzcq8fVzDzEPS_RxNc2Kjwhw9iozDkvRLXXR9UqtKHMJMyoOdCzNsCxSKwYAlxQoDg"
+    "image": "https://www.peninsula.com/en/-/media/images/new-york/03roomssuites/2024-refurbishment-rooms-and-suites/new-york_deluxe-room-2.jpg?hash=58CAD2CCBA1B6A595CB001E1C445C980&mw=905g"
   },
   {
     "id": 6,
@@ -45,6 +45,6 @@
     "maxGuests": 5,
     "pricePerNight": 300,
     "availableDates": ["2025-06-01", "2025-06-03", "2025-06-06", "2025-06-08"],
-    "image": "https://images.openai.com/thumbnails/url/RsfE13icu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw6OMs1PiUwNdnc2icrMT09Jj_TLzbLIzXN2ztM1KvVMKq-MTC0J8ssOj0rL8DL0D8p2NApIzDMIMQtRKwYA1P8pTg"
+    "image": "https://www.hallparkhotel.com/resourcefiles/header-main-navigation-image/deluxe-king-hall-park-hotel-frisco-tx.jpg"
   }
 ]
