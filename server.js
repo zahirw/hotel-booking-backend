@@ -168,7 +168,7 @@ app.patch('/api/bookings/:id', auth, (req, res) => {
 
 app.delete('/api/bookings/:id', auth, (req, res) => {
   const bookings = readData(bookingsFile);
-  const updated = bookings.filter(b => b.id !== parseInt(req.params.id) || b.userId !== req.user.id);
+  const updated = bookings.filter(b => b.id !== parseInt(req.params.id) && b.userId === req.user.id);
   writeData(bookingsFile, updated);
   res.json({ message: 'Booking cancelled' });
 });
